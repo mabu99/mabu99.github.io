@@ -12,7 +12,15 @@ Platforms:   Mobile & Tablet
 @charset "UTF-8";
 
 /* 1. General */
-
+.sidebar-loggined {
+    height: 30vh;
+    font-weight: 30vh;
+    size: 30vh;
+    text-align: center;
+    line-height: 100px;
+    font-size: 3vh;
+    color: white;
+}
 .snap-drawers *{
     max-height:999999px;
     -webkit-text-size-adjust:none;

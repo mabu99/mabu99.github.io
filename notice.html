@@ -6,6 +6,8 @@
         <meta name="apple-mobile-web-app-capable" content="yes"/>
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <title>꿀꿀이 TV 게시판</title>
+
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <style>
         .livescoreifreame {
             width: 100vw;
@@ -42,7 +44,12 @@
     <script type="text/javascript" src="scripts/jqueryui.js"></script>
     <script type="text/javascript" src="scripts/framework.plugins.js"></script>
     <script type="text/javascript" src="scripts/custom.js"></script>
-    
+    <style>
+        .nn3 {
+            width: 100vw;
+            height: 100vh;
+        }
+    </style>
     </head>
     <body>
     
@@ -56,45 +63,51 @@
     </div>
     
 
-<div class="all-elements">
-        <div class="snap-drawers">
-            <!-- Left Sidebar -->
-            <div class="snap-drawer snap-drawer-left">
-                <div class="sidebar-header">
-                    <a class="sidebar-close" href="#" ><i class="fa fa-times"></i></a>
-                </div>
-                <a href="#" class="sidebar-loggined"id="isloggined" style="display: none;" >환영합니다</a>
-              
-                <div class="sidebar-decoration"></div>
-                <ul class="sidebar-menu">
-                    <li class="active-menu" style="display: block;" id="liclass"><a href="login.html"><i class="fa fa-home"></i>로그인!<i class="fa fa-circle"></i></a></li>
-                    <li class="active-menu" style="display: block;" id="liclass1"><a href="signup.html"><i class="fa fa-home"></i>회원가입!<i class="fa fa-circle"></i></a></li>
-                    <li class="active-menu" style="display: block;" id="liclass2"><a href="https://mabu99.github.io/"><i class="fa fa-home"></i>메인페이지!<i class="fa fa-circle"></i></a></li>
-                    <li class="active-menu" style="display: block;" id="liclass3"><a href="LiveScore.html"><i class="fa fa-home"></i>라이브스코어!<i class="fa fa-circle"></i></a></li>
-                    <li class="active-menu" style="display: block;" id="liclass4"><a href="notice.html"><i class="fa fa-home"></i>게시판!<i class="fa fa-circle"></i></a></li>   
-                    <li class="active-menu" style="display: block;" id="logoutclass" onclick="logoutlistener()"><a href="https://mabu99.github.io/"><i class="fa fa-home"></i>로그아웃!<i class="fa fa-circle"></i></a></li>
-                </li>
-                    <script>
-                            if(localStorage.getItem("keyid")!=null&&localStorage.getItem("keyid")!=undefined&&localStorage.getItem("keyid")!=""){
-                             document.getElementById("isloggined").innerHTML = "환영합니다 "+localStorage.getItem("keyid")+"님";
-                             document.getElementById("isloggined").style="display: block;"
-                             document.getElementById("liclass").style="display: none;"
-                             document.getElementById("liclass1").style="display: none;"
-                             document.getElementById("logoutclass").style="display: block;"
-                            }
-                            else {
-                                document.getElementById("isloggined").style="display: none;"
-                                document.getElementById("logoutclass").style="display: none;"
-                                document.getElementById("liclass").style="display: block;"
-                                document.getElementById("liclass1").style="display: block;"
-                            }
-                            function logoutlistener(){
-                                localStorage.removeItem("keyid");
-                                alert('로그아웃되었습니다!');
-                            }
-                        </script>
-        </div>
-    
+    <div class="all-elements">
+            <div class="snap-drawers">
+                <!-- Left Sidebar -->
+                <div class="snap-drawer snap-drawer-left">
+                    <div class="sidebar-header">
+                        <a class="sidebar-close" href="#" ><i class="fa fa-times"></i></a>
+                    </div>
+                    <a href="#" class="sidebar-loggined"id="isloggined" style="display: none;" >환영합니다</a>
+                  
+                    <div class="sidebar-decoration"></div>
+                    <ul class="sidebar-menu">
+                        <li class="active-menu" style="display: block;" id="liclass"><a href="login.html"><i class="fa fa-home"></i>로그인!<i class="fa fa-circle"></i></a></li>
+                        <li class="active-menu" style="display: block;" id="liclass1"><a href="signup.html"><i class="fa fa-home"></i>회원가입!<i class="fa fa-circle"></i></a></li>
+                        <li class="active-menu" style="display: block;" id="liclass2"><a href="https://mabu99.github.io/"><i class="fa fa-home"></i>메인페이지!<i class="fa fa-circle"></i></a></li>
+                        <li class="active-menu" style="display: block;" id="liclass3"><a href="LiveScore.html"><i class="fa fa-home"></i>라이브스코어!<i class="fa fa-circle"></i></a></li>
+                        <li class="active-menu" style="display: block;" id="liclass4"><a href="notice.html"><i class="fa fa-home"></i>게시판!<i class="fa fa-circle"></i></a></li>   
+                        <li class="active-menu" style="display: block;" id="logoutclass" onclick="logoutlistener()"><a href="index.html"><i class="fa fa-home"></i>로그아웃!<i class="fa fa-circle"></i></a></li>
+                    </li>
+                        <script>
+                                if(localStorage.getItem("keyid")=="익명"){
+                                    document.getElementById("isloggined").style="display: none;"
+                                    document.getElementById("logoutclass").style="display: none;"
+                                    document.getElementById("liclass").style="display: block;"
+                                    document.getElementById("liclass1").style="display: block;"
+                                }
+                                else if(localStorage.getItem("keyid")!=null&&localStorage.getItem("keyid")!=undefined&&localStorage.getItem("keyid")!=""){
+                                 document.getElementById("isloggined").innerHTML = "환영합니다 "+localStorage.getItem("keyid")+"님";
+                                 document.getElementById("isloggined").style="display: block;"
+                                 document.getElementById("liclass").style="display: none;"
+                                 document.getElementById("liclass1").style="display: none;"
+                                 document.getElementById("logoutclass").style="display: block;"
+                                }
+                                else {
+                                    document.getElementById("isloggined").style="display: none;"
+                                    document.getElementById("logoutclass").style="display: none;"
+                                    document.getElementById("liclass").style="display: block;"
+                                    document.getElementById("liclass1").style="display: block;"
+                                }
+                                function logoutlistener(){
+                                    localStorage.setItem("keyid","익명");
+                                    alert('로그아웃되었습니다!');
+                                }
+                            </script>
+            </div>
+        
 
     
     
@@ -136,12 +149,6 @@
             </div>
             <div class="content">
                 <div class="container large-title no-bottom">
-                    <h3>안녕하세요? 사용자님?</h3>
-                    <p>
-                        꿀꿀이 TV는 스포츠 라이브 중계를 여러분에게 그 누구보다 빠른 속도로
-                        끊김없이 <strong>실시간으로 알려드립니다.</strong>
-                    </p>
-    
                     <div class="center-socials">
                         <a href="#" class="facebook-color facebook-social"><i class="fa fa-facebook"></i></a>
                         <a href="#" class="google-color google-social"><i class="fa fa-google-plus"></i></a>
@@ -151,19 +158,17 @@
                 <div class="decoration"></div>
             </div>
     
-            <!-- Content Heding -->
-            <div class="content-heading">
-                <h4>꿀꿀이 게시판!</h4>
-                <p>웹에서 게시판 사용은 여기서!</p>
-                <i class="fa fa-cog"></i>
-                <div class="overlay"></div>
-                <img src="images/pictures/5.jpg" alt="img">
-            </div>
-            <iframe class = "livescoreifreame" src = "http://18.219.158.245:3000/notice2/" id="main_frame">
-            </iframe>
+            <iframe class = "nn3" :src = "data" id="main_frame"></iframe>
             <script>
-                    var userdata = "http://18.219.158.245:3000/notice2/"+localStorage.getItem("keyid");
-                    document.getElementById("main_frame").src = userdata;
+                    // var userdata = "http://18.219.158.245:3000/notice2/"+localStorage.getItem("keyid");
+                    // document.getElementById("main_frame").src = userdata;
+                    // alert(userdata);
+                    var app = new Vue({
+                        el: '#main_frame',
+                        data: {
+                            data : 'http://18.219.158.245:3000/notice2/' + localStorage.getItem("keyid")
+                        }
+                    })
                 </script>
         </div>
     </div>

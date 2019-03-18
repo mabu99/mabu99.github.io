@@ -57,7 +57,6 @@
     
 
 
-
     <div class="all-elements">
             <div class="snap-drawers">
                 <!-- Left Sidebar -->
@@ -74,10 +73,16 @@
                         <li class="active-menu" style="display: block;" id="liclass2"><a href="https://mabu99.github.io/"><i class="fa fa-home"></i>메인페이지!<i class="fa fa-circle"></i></a></li>
                         <li class="active-menu" style="display: block;" id="liclass3"><a href="LiveScore.html"><i class="fa fa-home"></i>라이브스코어!<i class="fa fa-circle"></i></a></li>
                         <li class="active-menu" style="display: block;" id="liclass4"><a href="notice.html"><i class="fa fa-home"></i>게시판!<i class="fa fa-circle"></i></a></li>   
-                        <li class="active-menu" style="display: block;" id="logoutclass" onclick="logoutlistener()"><a href="https://mabu99.github.io/"><i class="fa fa-home"></i>로그아웃!<i class="fa fa-circle"></i></a></li>
+                        <li class="active-menu" style="display: block;" id="logoutclass" onclick="logoutlistener()"><a href="index.html"><i class="fa fa-home"></i>로그아웃!<i class="fa fa-circle"></i></a></li>
                     </li>
                         <script>
-                                if(localStorage.getItem("keyid")!=null&&localStorage.getItem("keyid")!=undefined&&localStorage.getItem("keyid")!=""){
+                                if(localStorage.getItem("keyid")=="익명"){
+                                    document.getElementById("isloggined").style="display: none;"
+                                    document.getElementById("logoutclass").style="display: none;"
+                                    document.getElementById("liclass").style="display: block;"
+                                    document.getElementById("liclass1").style="display: block;"
+                                }
+                                else if(localStorage.getItem("keyid")!=null&&localStorage.getItem("keyid")!=undefined&&localStorage.getItem("keyid")!=""){
                                  document.getElementById("isloggined").innerHTML = "환영합니다 "+localStorage.getItem("keyid")+"님";
                                  document.getElementById("isloggined").style="display: block;"
                                  document.getElementById("liclass").style="display: none;"
@@ -91,14 +96,12 @@
                                     document.getElementById("liclass1").style="display: block;"
                                 }
                                 function logoutlistener(){
-                                    localStorage.removeItem("keyid");
+                                    localStorage.setItem("keyid","익명");
                                     alert('로그아웃되었습니다!');
                                 }
                             </script>
             </div>
         
-    
-    
         
         <!-- Page Content-->
         <div id="content" class="snap-content">

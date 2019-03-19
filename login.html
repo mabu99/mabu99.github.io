@@ -5,9 +5,7 @@
 
   <meta charset="UTF-8">
 	<meta http-equiv="Content-Security-Policy" content="block-all-mixed-content">
-
 	<title>꿀꿀이 로그인!</title>
-
     <style>
 @import url(https://fonts.googleapis.com/css?family=Exo:100,200,400);
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:700,400,300);
@@ -167,7 +165,7 @@ body{
         passwd: document.getElementById('passwd').value
     })
     .catch( e => {
-        alert('로그인 실패! (만약 맞게 입력했는데 로그인이 안된다면 상단에 있는 안전하지 않은 스크립트를 허용해주세요, https 웹 보안 정책 강화로 가끔 발생하는 웹 보안 문제입니다.) ');
+        alert('로그인 실패! (비밀번호나 ID를 확인해주세요.) ');
         window.location.href = "login.html";    
 	})
 	if(result.status === 200){

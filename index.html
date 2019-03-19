@@ -81,6 +81,7 @@
                              document.getElementById("logoutclass").style="display: block;"
                             }
                             else {
+                                localStorage.setItem("keyid","익명");
                                 document.getElementById("isloggined").style="display: none;"
                                 document.getElementById("logoutclass").style="display: none;"
                                 document.getElementById("liclass").style="display: block;"
@@ -210,7 +211,7 @@
                 <div class="decoration hide-if-responsive"></div>
                 <div class="one-half-responsive last-column">
                     <p class="thumb-right no-bottom">
-                        <a href=""><img src="images/gesipan.jpg" alt="img"></a>
+                        <a href="gesipan.html"><img src="images/gesipan.jpg" alt="img"></a>
                         <strong>게시판</strong>
                         <em><br>여기서 수다떨어요~</em>
                     </p>

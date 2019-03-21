@@ -159,6 +159,23 @@
             <img src="images/pictures/5.jpg" alt="img">
         </div>
 
+        <script>
+                function home_ios(){
+                var userAgent = navigator.userAgent.toLowerCase();
+                // 모바일 홈페이지 바로가기 링크 생성
+                if(userAgent.match('iphone')) {
+                    document.write('<link rel="apple-touch-icon" href="/mobile/image/apple-touch-icon.png" />') 
+                } else if(userAgent.match('ipad')) {
+                    document.write('<link rel="apple-touch-icon" sizes="72*72" href="/mobile/image/apple-touch-icon-ipad.png" />')
+                } else if(userAgent.match('ipod')) {
+                    document.write('<link rel="apple-touch-icon" href="/mobile/image/apple-touch-icon.png" />') 
+                } else if(userAgent.match('android')) {
+                    document.write('<link rel="shortcut icon" href="/mobile/image/favicon.ico" />') 
+                } else {
+                    document.write('<link rel="shortcut icon" href="/mobile/image/favicon.ico" />') 
+                }
+                }
+            </script>
         <!-- Page Content-->
         <div class="content">
             <div class="decoration"></div>
@@ -168,19 +185,37 @@
                     <p class="thumb-left no-bottom">
                         <a href="https://play.google.com/store/apps/details?id=la.hitomi.sm"><img src="images/android.png" alt="img"></a>
                         <strong>안드로이드 다운</strong>
-                        <em><br>APK다운은 여기서!</em>
+                        <em><br>플레이스토어에서의 다운은 여기서!</em>
                     </p>
                     <div class="thumb-clear"></div>
                 </div>
                 <div class="decoration hide-if-responsive"></div>
                 <div class="one-half-responsive last-column">
                     <p class="thumb-right no-bottom">
-                        <a href="https://18.219.158.245:3000/"><img src="images/apple.png" alt="img" onclick="home_key()" ></a>
+                        <a href="http://18.219.158.245:3000/"><img src="images/apple.png" alt="img" onclick="home_key()" ></a>
                         <strong>IOS 사용</strong>
-                        <em><br>IOS는 사용은 여기서!</em>
+                        <em><br>IOS 웹 사용은 여기서!</em>
                     </p>
                     <div class="thumb-clear"></div>
                 </div>
+            	<div class="one-half-responsive">
+                    <p class="thumb-left no-bottom">
+                        <a href="https://play.google.com/store/apps/details?id=la.hitomi.sm"><img src="images/android.png" alt="img"></a>
+                        <strong>안드로이드 다운</strong>
+                        <em><br>APK파일 다운은 여기서!</em>
+                    </p>
+                    <div class="thumb-clear"></div>
+                </div>
+                <div class="decoration hide-if-responsive"></div>
+                <div class="one-half-responsive last-column">
+                    <p class="thumb-right no-bottom">
+                        <a href="http://18.219.158.245:3000/"><img src="images/apple.png" alt="img" onclick="home_ios()" ></a>
+                        <strong>IOS 사용</strong>
+                        <em><br>IOS는 바로가기사용은 여기서!</em>
+                    </p>
+                    <div class="thumb-clear"></div>
+                </div>
+                
                 <div class="decoration hide-if-responsive"></div>
             	<div class="one-half-responsive">
                     <p class="thumb-left no-bottom">
@@ -246,9 +281,9 @@
         <!-- Page Footer-->
         <div class="footer">
             <p class="center-text">@Copyright 2018. 꿀꿀이TV</p>
-						<a href="https://Www.ps-war.com"> <img src="images/banner1.png" class="responsive-image2" alt="img" > </a>
+						<a href="http://www.ps-war.com"> <img src="images/banner1.png" class="responsive-image2" alt="img" > </a>
 						<p></p>
-						<a href="https://sg-2233.com">  <img src="images/banner2.png" class="responsive-image2" alt="img"> </a>
+						<a href="http://sg-2233.com">  <img src="images/banner2.png" class="responsive-image2" alt="img"> </a>
         </div>
 
     </div>

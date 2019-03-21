@@ -166,29 +166,18 @@ body{
 				name: document.getElementById('name').value,
         phone: document.getElementById('phone').value
     })
-    .catch( e => {
-        alert('회원가입 실패!');
+    .catch( e => { 
+					alert('회원가입 실패!');
         window.location.href = "signup.html";    
-	})
-	if(result.status === 200){
+			})
+			if(result.status === 200){
         alert('회원가입 성공!');
 				window.location.href = "index.html";  
 				localStorage.setItem("keyid",document.getElementById('id').value);
-	}
-	else if(result.status === 409){
-		alert("이미 가입되어있으십니다.");
-		window.location.href = "signup.html";
-	}
-	else if(result.status === 400){
-		alert("회원가입 실패");
-		window.location.href = "signup.html";
-	}
-	else{
-		alert("회원가입 실패 (중복계정 또는 인터넷 문제일수도 있습니다.)");
-		window.location.href = "signup.html";
-	}
+			} 
 }	
 </script>
+
 
 
     <link rel="shortcut icon" href="apple-icon-57x57.png">
@@ -219,7 +208,7 @@ body{
 			<div>꿀꿀이<span> 회원가입!</span></div>
 		</div>
 		<br>
-		<div class="login" id="regi">
+		<div class="login" action="http://18.219.158.245:3030/auth/regi" id="regi" method="post">
 				<input type="text" placeholder="아이디" name="id" id="id"><br>
 				<input type="password" placeholder="비밀번호" name="passwd" id="passwd"><br>
 				<input type="text" placeholder="이름" name="name" id="name"><br>
